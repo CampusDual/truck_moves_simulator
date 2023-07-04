@@ -12,12 +12,10 @@ console.log(process.env.POST_URL)
 const delay = (t) => new Promise((resolve) => { setTimeout(() => { resolve(); }, t) })
 
 function getAction() {
-    const banner = (`
-Press ENTER to perform a single request.
+    const banner = (`Press ENTER to perform a single request.
 Press 'm' to perform a request every minute.
 Press 's' to perform a request every second.
-Press 'e' to exit.
-    `);
+Press 'e' to exit.`);
     return new Promise((resolve) => {
         rl.question(banner, (opt) => { return resolve(opt) })
     });
@@ -32,7 +30,7 @@ function performRequest(file) {
             {
                 headers: {
                     'Content-type': "application/json",
-                    'Authorization': `Basic ${(new Buffer(`${process.env.USER}:${process.env.PASS}`)).toString("base64")}`
+                    'Authorization': `Basic ${(new Buffer.from(`${process.env.USER}:${process.env.PASS}`)).toString("base64")}`
                 }
             }
         )
