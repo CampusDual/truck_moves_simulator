@@ -30,7 +30,7 @@ function performRequest(file) {
             {
                 headers: {
                     'Content-type': "application/json",
-                    'Authorization': `Basic ${(new Buffer.from(`${process.env.USER}:${process.env.PASS}`)).toString("base64")}`
+                    'Authorization': `Basic ${(new Buffer.from(`${process.env.WS_USER}:${process.env.WS_PASS}`)).toString("base64")}`
                 }
             }
         )
