@@ -44,6 +44,6 @@ app.get("/get_trucks_in", (req, res) => {
     res.json(truck_inside)
 })
 
-app.listen(PORT, () => {
+app.listen(PORT, "0.0.0.0", () => {
     console.log(`Listen on the port ${PORT}...`);
 });
